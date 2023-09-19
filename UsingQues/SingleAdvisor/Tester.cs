@@ -10,6 +10,8 @@ namespace UsingQues.SingleAdvisor
     {
         static void Main(string[] args)
         {
+
+            Random random = new Random();
             InterviewCenter center = new InterviewCenter();
             center.Interview("ST1000");
             center.Interview("ST1009");
@@ -22,7 +24,7 @@ namespace UsingQues.SingleAdvisor
             {
                 WalkinInInterview interview = center.AttendToStudent("Jessie");
                 Print($"Inrerview  {interview.Id} for Student {interview.studentNumber} is attended to by {interview.Advisor} at {interview.startTime}");
-                Thread.Sleep(1000);
+                Thread.Sleep(random.Next(1000,10000));
                 center.EndInterview(interview);
                 Print($"Interview {interview.Id} with Student {interview.studentNumber} was ended by {interview.Advisor} at {interview.endTime}");
             }
